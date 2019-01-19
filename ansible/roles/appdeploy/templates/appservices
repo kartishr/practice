@@ -8,19 +8,19 @@ services:
       - 80:80
 
   sm:
-    image: kartishr/smapp:{{smappimage_tag}}
+    image: tomcat:8.5-jre8-alpine
     # Configuration files for sm service
     ports:
       - 8080:8080
 
   pep:
-    image: kartishr/pepapp:{{pepappimage_tag}}
+    image: tomcat:8.5-jre8-alpine
     # Configuration files for pep service
     ports:
       - 8081:8080
 
   Discovery:
-    image: kartishr/discoveryapp:{{disappimage_tag}}
+    image: tomcat:8.5-jre8-alpine
     # Configuration files for discovery service
     ports:
       - 8082:8080
