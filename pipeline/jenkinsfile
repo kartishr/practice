@@ -2,6 +2,8 @@ def CONTAINER_NAME="smapp"
 def CONTAINER_TAG="0.0.2"
 def DOCKER_HUB_USER="kartish"
 def HTTP_PORT="8091"
+def USERNAME="kartish"
+def PASSWORD=""
 
 node {
 
@@ -37,7 +39,7 @@ node {
     }
 
     stage('Push to Docker Registry'){
-        withCredentials([usernamePassword(credentialsId: 'dockerHubAccount', usernameVariable: 'kartish', passwordVariable: 'Kartish@22')]) {
+        // withCredentials([usernamePassword(credentialsId: 'dockerHubAccount', usernameVariable: 'kartish', passwordVariable: '')]) {
             pushToImage(CONTAINER_NAME, CONTAINER_TAG, USERNAME, PASSWORD)
         }
     }
