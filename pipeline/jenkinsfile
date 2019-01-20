@@ -28,6 +28,7 @@ node {
     //  }
 
     stage("Image Prune"){
+        sh 'whoami'
         imagePrune(CONTAINER_NAME)
     }
 
